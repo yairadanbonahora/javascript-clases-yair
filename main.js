@@ -81,55 +81,77 @@
 // } while (colores != "negro")
 
 //INTEGRADOR
-function mostrarConsola (mensaje) {
-    console.log (mensaje);
-}
+// function mostrarConsola (mensaje) {
+//     console.log (mensaje);
+// }
 
-const suma = (a, b) => a + b;
-const resta = (a, b) => a - b;
+// const suma = (a, b) => a + b;
+// const resta = (a, b) => a - b;
 
-const iva = (x) => x * 0.21;
+// const iva = (x) => x * 0.21;
 
 
+// let usuarioIngresado = prompt ("Ingrese nombre de usuario");
+// let usuario = usuarioIngresado;
 
-let usuarioIngresado = prompt ("Ingrese nombre de usuario");
-let usuario = usuarioIngresado;
+// if (usuarioIngresado == "") {
+//     alert ("Por favor ingrese su usuario");
+//     } else if (usuario == usuarioIngresado){
+//     mostrarConsola ("Bienvenido " + usuario + "!");
+// }
 
-if (usuarioIngresado == "") {
-    alert ("Por favor ingrese su usuario");
-    } else if (usuario == usuarioIngresado){
-    mostrarConsola ("Bienvenido " + usuario + "!");
-}
+// let email = prompt ("Ingrese su email");
+// mostrarConsola ("Usted ha ingresado " + email);
 
-let email = prompt ("Ingrese su email");
-mostrarConsola ("Usted ha ingresado " + email);
+// let compra = prompt ("Indique qué producto quiere comprar: caños, chapas, discos");
+// while (compra != "ESC") {
+//     switch (compra) {
+//         case "caños": 
+//             let cantidad = parseInt (prompt ("Indique cantidad a comprar"));
+//             if (cantidad <= 5) {
+//                 alert ("Usted ha comprado: " + cantidad);
+//             } else if (cantidad <= 10) {
+//                 let resultado = cantidad + 1;
+//                 alert ("Recibirá un caño más de regalo. Recibirá: " + resultado);
+//             } else {
+//                 let resultado = cantidad + 2
+//                 alert ("Recibirá dos caños más de regalo. Recibirá: " + resultado);
+//             }
+//             block;
+//         case "discos": 
+//             const precioDiscos = 340;
+//             let ingresarNumero = parseInt (prompt ("Ingresar cantidad"));
+//             let valorTotal = ingresarNumero * precioDiscos;
+//             let precioAPagar = suma (valorTotal, iva(valorTotal));
+//             alert ("Deberá abonar: " + precioAPagar);
+//             block;
+//         default: 
+//             alert ("Usted no ha seleccionado nada");
+//             block;
+//     }
+// }
 
-let compra = prompt ("Indique qué producto quiere comprar: caños, chapas, discos");
-while (compra != "ESC") {
-    switch (compra) {
-        case "caños": 
-            let cantidad = parseInt (prompt ("Indique cantidad a comprar"));
-            if (cantidad <= 5) {
-                alert ("Usted ha comprado: " + cantidad);
-            } else if (cantidad <= 10) {
-                let resultado = cantidad + 1;
-                alert ("Recibirá un caño más de regalo. Recibirá: " + resultado);
-            } else {
-                let resultado = cantidad + 2
-                alert ("Recibirá dos caños más de regalo. Recibirá: " + resultado);
-            }
-            block;
-        case "discos": 
-            const precioDiscos = 340;
-            let ingresarNumero = parseInt (prompt ("Ingresar cantidad"));
-            let valorTotal = ingresarNumero * precioDiscos;
-            let precioAPagar = suma (
-            (valorTotal, iva(valorTotal))
-            );
-            alert ("Deberá abonar: " + precioAPagar);
-            block;
-        default: 
-            alert ("Usted no ha seleccionado nada");
-            block;
+// //QUINTA CLASE- OBJETOS
+class CrearUsuario {
+    constructor (nombre, localidad, mail){
+        this.nombre = nombre;
+        this.localidad = localidad;
+        this.pais = "Argentina";
+        this.mail = mail;
+    }
+    hablar () {
+        console.log ("Hola soy " + this.nombre + ", vivo en " + this.localidad + ". Mi mail es: " + this.mail);
     }
 }
+
+const nombre = prompt ("Ingrese nombre de usuario");
+const localidad = prompt ("Ingrese su localidad");
+const mail = prompt ("Ingrese su mail");
+
+const usuario1 = new CrearUsuario (nombre, localidad, mail);
+const usuario2 = new CrearUsuario ("Claudio", "La Plata", "claudio@gmail");
+const usuario3 = new CrearUsuario ("Sandra", "Junin", "sandra@gmail");
+
+usuario1.hablar ();
+console.log (usuario2);
+console.log (usuario3); 
