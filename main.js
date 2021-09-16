@@ -98,11 +98,11 @@ let usuario = usuarioIngresado;
 if (usuarioIngresado == "") {
     alert ("Por favor ingrese su usuario");
     } else if (usuario == usuarioIngresado){
-    alert ("Bienvenido " + usuario + "!");
+    mostrarConsola ("Bienvenido " + usuario + "!");
 }
 
 let email = prompt ("Ingrese su email");
-alert ("Usted ha ingresado " + email);
+mostrarConsola ("Usted ha ingresado " + email);
 
 let compra = prompt ("Indique qué producto quiere comprar: caños, chapas, discos");
 while (compra != "ESC") {
