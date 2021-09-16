@@ -41,41 +41,95 @@
 // }
 
 //TERCER CLASE
-let autor = prompt ("Ingrese nombre de autor");
+// let autor = prompt ("Ingrese nombre de autor");
 
-while (autor != "ESC") {
-    switch (autor) {
-        case "O´Donnell":
-            alert ("Está en la sección ´Política´");
-            break; 
+// while (autor != "ESC") {
+//     switch (autor) {
+//         case "O´Donnell":
+//             alert ("Está en la sección ´Política´");
+//             break; 
             
-        case "Foucault":
-            alert ("Está en la sección ´Filosofía´");
-            break;
+//         case "Foucault":
+//             alert ("Está en la sección ´Filosofía´");
+//             break;
         
-        case "Raymond Aron":
-            alert ("Están en la sección ´Historia´");
-            break;
+//         case "Raymond Aron":
+//             alert ("Están en la sección ´Historia´");
+//             break;
 
+//         default: 
+//             alert ("Ese autor no se encuentra disponible");
+//     } 
+
+//     autor = prompt ("Ingrese nombre de autor");
+//     console.log (autor); 
+// }
+
+// for (let turno = 1; turno <= 11; turno ++) {
+//     if (turno == 11) {
+//         alert ("Disculpe, el cupo está completo");
+//         break;
+//     }
+//     let ingresarNombre = prompt ("Ingresar nombre");
+//     console.log ("Turno N" + turno + " Nombre: " + ingresarNombre );
+// }
+
+// let colores = prompt ("Ingrese un color");
+// do {
+//     console.log (colores);
+//     colores = prompt ("Ingrese otro color");
+// } while (colores != "negro")
+
+//INTEGRADOR
+function mostrarConsola (mensaje) {
+    console.log (mensaje);
+}
+
+const suma = (a, b) => a + b;
+const resta = (a, b) => a - b;
+
+const iva = (x) => x * 0.21;
+
+
+
+let usuarioIngresado = prompt ("Ingrese nombre de usuario");
+let usuario = usuarioIngresado;
+
+if (usuarioIngresado == "") {
+    alert ("Por favor ingrese su usuario");
+    } else if (usuario == usuarioIngresado){
+    alert ("Bienvenido " + usuario + "!");
+}
+
+let email = prompt ("Ingrese su email");
+alert ("Usted ha ingresado " + email);
+
+let compra = prompt ("Indique qué producto quiere comprar: caños, chapas, discos");
+while (compra != "ESC") {
+    switch (compra) {
+        case "caños": 
+            let cantidad = parseInt (prompt ("Indique cantidad a comprar"));
+            if (cantidad <= 5) {
+                alert ("Usted ha comprado: " + cantidad);
+            } else if (cantidad <= 10) {
+                let resultado = cantidad + 1;
+                alert ("Recibirá un caño más de regalo. Recibirá: " + resultado);
+            } else {
+                let resultado = cantidad + 2
+                alert ("Recibirá dos caños más de regalo. Recibirá: " + resultado);
+            }
+            block;
+        case "discos": 
+            const precioDiscos = 340;
+            let ingresarNumero = parseInt (prompt ("Ingresar cantidad"));
+            let valorTotal = ingresarNumero * precioDiscos;
+            let precioAPagar = suma (
+            (valorTotal, iva(valorTotal))
+            );
+            alert ("Deberá abonar: " + precioAPagar);
+            block;
         default: 
-            alert ("Ese autor no se encuentra disponible");
-    } 
-
-    autor = prompt ("Ingrese nombre de autor");
-    console.log (autor); 
-}
-
-for (let turno = 1; turno <= 11; turno ++) {
-    if (turno == 11) {
-        alert ("Disculpe, el cupo está completo");
-        break;
+            alert ("Usted no ha seleccionado nada");
+            block;
     }
-    let ingresarNombre = prompt ("Ingresar nombre");
-    console.log ("Turno N" + turno + " Nombre: " + ingresarNombre );
 }
-
-let colores = prompt ("Ingrese un color");
-do {
-    console.log (colores);
-    colores = prompt ("Ingrese otro color");
-} while (colores != "negro")
