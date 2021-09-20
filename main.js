@@ -158,9 +158,36 @@
 
 //SEXTA CLASE- ARRAYS
 //Entregable
-let maquinas = ["cortadora de chapas", "plegadora", "balancin"];
-console.log (maquinas.join ("\n"));
+// let maquinas = ["cortadora de chapas", "plegadora", "balancin"];
+// console.log (maquinas.join ("\n"));
 
-let maquinasAgregarALista = ["agujereadora de banco", "cortadora de fierros"];
-let ListadoCompleto = maquinas.concat (maquinasAgregarALista);
-console.log (ListadoCompleto.join ("\n"));
+// let maquinasAgregarALista = ["agujereadora de banco", "cortadora de fierros"];
+// let ListadoCompleto = maquinas.concat (maquinasAgregarALista);
+// console.log (ListadoCompleto.join ("\n"));
+
+//Complementario
+//ordenado por orden alfabético
+// let maquinas = ["cortadora de chapas", "plegadora", "balancin"];
+// let maquinasAgregarALista = ["agujereadora de banco", "cortadora de fierros"];
+// let ListadoCompleto = maquinas.concat (maquinasAgregarALista);
+// console.log ((ListadoCompleto.sort()).join ("\n"));
+
+//ordenado por precio
+
+let maquinas = [
+    {name: "cortadora de chapas", precio: 30000},
+    {name: "plegadora", precio: 60000},
+    {name: "balancin", precio: 10000},
+    {name: "agujereadora de banco", precio: 25000},
+    {name: "cortadora de fierros", precio: 35000},
+]; 
+maquinas.sort (function (a,b) {
+    return a.precio - b.precio;
+})
+console.log (maquinas);
+
+// for (let precio of maquinas) {
+//     console.log (precio.precio);
+// }
+
+
