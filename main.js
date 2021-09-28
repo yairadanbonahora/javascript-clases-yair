@@ -174,20 +174,38 @@
 
 //ordenado por precio
 
-let maquinas = [
-    {name: "cortadora de chapas", precio: 30000},
-    {name: "plegadora", precio: 60000},
-    {name: "balancin", precio: 10000},
-    {name: "agujereadora de banco", precio: 25000},
-    {name: "cortadora de fierros", precio: 35000},
-]; 
-maquinas.sort (function (a,b) {
-    return a.precio - b.precio;
-})
-console.log (maquinas);
+// let maquinas = [
+//     {name: "cortadora de chapas", precio: 30000},
+//     {name: "plegadora", precio: 60000},
+//     {name: "balancin", precio: 10000},
+//     {name: "agujereadora de banco", precio: 25000},
+//     {name: "cortadora de fierros", precio: 35000},
+// ]; 
+// maquinas.sort (function (a,b) {
+//     return a.precio - b.precio;
+// })
+// console.log (maquinas);
 
 // for (let precio of maquinas) {
 //     console.log (precio.precio);
 // }
 
+//CLASE 8- DOM
+let masMaquinas = document.createElement ("li");
+let texto = document.createTextNode ("Agujereadora");
+masMaquinas.appendChild (texto);
+document.getElementById ("maquinas").appendChild (masMaquinas);
 
+let listProductos = document.createElement("h3");
+listProductos.innerHTML = "Productos";
+document.body.appendChild(listProductos);
+
+let elementosList = document.createElement ("ul");
+document.body.appendChild (elementosList);
+
+let productos = ["Chapas", "Caños", "Discos"];
+for (const producto of productos) {
+    let li = document.createElement ("li");
+    li.innerHTML = producto;
+    elementosList.appendChild(li);
+}
