@@ -200,12 +200,12 @@ let listProductos = document.createElement("h3");
 listProductos.innerHTML = "Productos";
 document.body.appendChild(listProductos);
 
-let elementosList = document.createElement ("ul");
-document.body.appendChild (elementosList);
+let contenedorUl = document.createElement ("ul");
+document.body.appendChild (contenedorUl);
 
 let productos = ["Chapas", "Caños", "Discos"];
 for (const producto of productos) {
     let li = document.createElement ("li");
     li.innerHTML = producto;
-    elementosList.appendChild(li);
+    contenedorUl.appendChild(li);
 }
