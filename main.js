@@ -191,21 +191,43 @@
 // }
 
 //CLASE 8- DOM
-let masMaquinas = document.createElement ("li");
-let texto = document.createTextNode ("Agujereadora");
-masMaquinas.appendChild (texto);
-document.getElementById ("maquinas").appendChild (masMaquinas);
+// let masMaquinas = document.createElement ("li");
+// let texto = document.createTextNode ("Agujereadora");
+// masMaquinas.appendChild (texto);
+// document.getElementById ("maquinas").appendChild (masMaquinas);
 
-let listProductos = document.createElement("h3");
-listProductos.innerHTML = "Productos";
-document.body.appendChild(listProductos);
+// let listProductos = document.createElement("h3");
+// listProductos.innerHTML = "Productos";
+// document.body.appendChild(listProductos);
 
-let contenedorUl = document.createElement ("ul");
-document.body.appendChild (contenedorUl);
+// let contenedorUl = document.createElement ("ul");
+// document.body.appendChild (contenedorUl);
 
-let productos = ["Chapas", "Caños", "Discos"];
-for (const producto of productos) {
-    let li = document.createElement ("li");
-    li.innerHTML = producto;
-    contenedorUl.appendChild(li);
+// let productos = ["Chapas", "Caños", "Discos"];
+// for (const producto of productos) {
+//     let li = document.createElement ("li");
+//     li.innerHTML = producto;
+//     contenedorUl.appendChild(li);
+// }
+
+//CLASE 9- EVENTOS
+//desafío entregable
+let productoClick = document.getElementsByClassName ("element")[1];
+productoClick.onmouseover = () => {
+    let btn = document.createElement ("button");
+    btn.innerHTML = "Comprar";
+    document.body.appendChild (btn); 
 }
+
+//desafío complementario
+let maquinasClick = document.getElementsByClassName ("element")[0];
+maquinasClick.onclick = () => {
+    let contenedorUl = document.createElement ("ul");
+    maquinasClick.appendChild (contenedorUl);
+    let maquinas = ["Cortadora", "Plegadora", "Balancin"];
+    for (const maquina of maquinas) {
+        let li = document.createElement ("li");
+        li.innerHTML = maquina;
+        contenedorUl.appendChild(li);
+    }
+};
