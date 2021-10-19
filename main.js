@@ -212,22 +212,95 @@
 
 //CLASE 9- EVENTOS
 //desafío entregable
-let productoClick = document.getElementsByClassName ("element")[1];
-productoClick.onmouseover = () => {
-    let btn = document.createElement ("button");
-    btn.innerHTML = "Comprar";
-    document.body.appendChild (btn); 
-}
+// let productoClick = document.getElementsByClassName ("element")[1];
+// productoClick.onmouseover = () => {
+//     let btn = document.createElement ("button");
+//     btn.innerHTML = "Comprar";
+//     document.body.appendChild (btn); 
+// }
 
-//desafío complementario
-let maquinasClick = document.getElementsByClassName ("element")[0];
-maquinasClick.onclick = () => {
-    let contenedorUl = document.createElement ("ul");
-    maquinasClick.appendChild (contenedorUl);
-    let maquinas = ["Cortadora", "Plegadora", "Balancin"];
-    for (const maquina of maquinas) {
-        let li = document.createElement ("li");
-        li.innerHTML = maquina;
-        contenedorUl.appendChild(li);
+// //desafío complementario
+// let maquinasClick = document.getElementsByClassName ("element")[0];
+// maquinasClick.onclick = () => {
+//     let contenedorUl = document.createElement ("ul");
+//     maquinasClick.appendChild (contenedorUl);
+//     let maquinas = ["Cortadora", "Plegadora", "Balancin"];
+//     for (const maquina of maquinas) {
+//         let li = document.createElement ("li");
+//         li.innerHTML = maquina;
+//         contenedorUl.appendChild(li);
+//     }
+// };
+
+//CLASE 12- JQUERY SELECTORES Y EVENTOS
+let menu = document.getElementById ("menu");
+menu.onclick = () => {
+    let contenedorDiv = document.createElement ("div");
+    menu.appendChild (contenedorDiv);
+    let div = document.createElement ("div");
+    div.innerHTML = `<div class="elemento">Productos</div>
+                    <div class="elemento">Máquinas</div>`;
+    contenedorDiv.appendChild (div);  
+
+    menu.onclick = ""; 
+
+    let productos = [
+        {name:"Discos", price: 500, stock: 300},
+        {name:"Chapas", price: 10000, stock: 97},
+        {name:"Caños", price: 13000, stock: 120},
+    ]
+
+    let divProductos = document.getElementsByClassName ("elemento") [0];
+    divProductos.onclick = () => {
+        let contenedorProduc = document.createElement ("ul");
+        divProductos.appendChild (contenedorProduc);
+        for (const producto of productos) {
+            let div = document.createElement ("div");
+            div.innerHTML = `<div class="opciones"><input type="Radio" name="produc-selected" class="optionSelected"> ${producto.name}. Precio: $${producto.price} </div>`;
+            contenedorProduc.appendChild (div);
+
+            if (".optionSelected:checked") {
+                divProductos.onclick = "";
+            }
+        }
+       
+        let btn = document.createElement ("button");
+        btn.innerHTML = "Comprar";
+        divProductos.appendChild (btn);  
+
+        $("button").click ((e) => {
+            $ (".elemento")[0].append ("Usted ha agregado un producto al carrito")
+        })
     }
-};
+
+    let maquinas = [
+        {name:"Agujereadora de banco", price: 25000, stock: 50},
+        {name:"Balancin", price: 10000, stock: 68},  
+        {name: "Cortadora de chapas", price: 30000, stock: 25},
+        {name:"Cortadora de fierros", price: 35000, stock: 75},
+        {name: "Plegadora", price: 60000, stock: 32},
+    ]
+
+    let divMaquinas = document.getElementsByClassName ("elemento") [1];
+    divMaquinas.onclick = () => {
+        let contenedorMaquinas = document.createElement ("ul");
+        divMaquinas.appendChild (contenedorMaquinas);
+        for (const maquina of maquinas) {
+            let div = document.createElement ("div");
+            div.innerHTML = `<div class="opciones"><input type="Radio" name="produc-selected" class="optionSelected"> ${maquina.name}. Precio: $${maquina.price} </div>`;
+            contenedorMaquinas.appendChild (div);
+
+            if (".optionSelected:checked") {
+                divMaquinas.onclick = "";
+            }
+        }
+        
+        let btn = document.createElement ("button");
+        btn.innerHTML = "Comprar";
+        divMaquinas.appendChild (btn); 
+
+        $("button").click ((e) => {
+            $ (".elemento")[1].append ("Usted ha agregado una máquina al carrito")
+        })
+    }
+}
