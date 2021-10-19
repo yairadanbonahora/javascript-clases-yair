@@ -306,28 +306,46 @@
 // }
 
 //CLASE 13- EFECTOS Y ANIMACIONES CON JQUERY
-let maquinas = [
-            {name:"Agujereadora de banco", price: 25000, stock: 50},
-            {name:"Balancin", price: 10000, stock: 68},  
-            {name: "Cortadora de chapas", price: 30000, stock: 25},
-            {name:"Cortadora de fierros", price: 35000, stock: 75},
-            {name: "Plegadora", price: 60000, stock: 32},
-]
+// let maquinas = [
+//             {name:"Agujereadora de banco", price: 25000, stock: 50},
+//             {name:"Balancin", price: 10000, stock: 68},  
+//             {name: "Cortadora de chapas", price: 30000, stock: 25},
+//             {name:"Cortadora de fierros", price: 35000, stock: 75},
+//             {name: "Plegadora", price: 60000, stock: 32},
+// ]
 
-let menu = document.getElementById ("menu");
+// let menu = document.getElementById ("menu");
 
-let btn = document.createElement ("button");
-btn.innerHTML = "Ver";
-menu.appendChild (btn);
+// let btn = document.createElement ("button");
+// btn.innerHTML = "Ver";
+// menu.appendChild (btn);
 
-for (const maquina of maquinas) {
-    let opciones = document.createElement ("h4");
-    opciones.innerHTML = `<h4 style="display:none" class="maquinasTodas"> ${maquina.name}. Precio: $${maquina.price} </h4>`;
-    menu.appendChild (opciones);
-}
+// for (const maquina of maquinas) {
+//     let opciones = document.createElement ("h4");
+//     opciones.innerHTML = `<h4 style="display:none" class="maquinasTodas"> ${maquina.name}. Precio: $${maquina.price} </h4>`;
+//     menu.appendChild (opciones);
+// }
 
-$("button").click ((e) => {
-    $(".maquinasTodas").slideDown ("slow", function () {
-        $ (".maquinasTodas").css ({"font-size":"20px", "color":"grey"})
-    }).delay (4000).slideUp ("fast");
+// $("button").click ((e) => {
+//     $(".maquinasTodas").slideDown ("slow", function () {
+//         $ (".maquinasTodas").css ({"font-size":"20px", "color":"grey"})
+//     }).delay (4000).slideUp ("fast");
+// })
+
+//CLASE 14- AJAX CON JQUERY
+const URLGET = "https://rickandmortyapi.com/api/character";
+
+$("body").prepend ("<button id=btn> GET name </button>");
+$ ("#btn").click (() => {
+    $.get (URLGET, function (response, state) {
+        console.log (response)
+        $("body").append (`<h1>${response.results [1].name}</h1>`);
+        $("body").append ("<button id=btnImg> SEE Image </button>");
+
+        $ ("#btnImg").click (() => 
+            $.get (URLGET, function (response, state) {
+                $("body").append (`<img src = ${response.results [1].image} </img>`)
+            })
+        ) 
+    })   
 })
