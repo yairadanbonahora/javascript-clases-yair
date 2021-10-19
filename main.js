@@ -233,74 +233,101 @@
 // };
 
 //CLASE 12- JQUERY SELECTORES Y EVENTOS
-let menu = document.getElementById ("menu");
-menu.onclick = () => {
-    let contenedorDiv = document.createElement ("div");
-    menu.appendChild (contenedorDiv);
-    let div = document.createElement ("div");
-    div.innerHTML = `<div class="elemento">Productos</div>
-                    <div class="elemento">Máquinas</div>`;
-    contenedorDiv.appendChild (div);  
+// let menu = document.getElementById ("menu");
+// menu.onclick = () => {
+//     let contenedorDiv = document.createElement ("div");
+//     menu.appendChild (contenedorDiv);
+//     let div = document.createElement ("div");
+//     div.innerHTML = `<div class="elemento">Productos</div>
+//                     <div class="elemento">Máquinas</div>`;
+//     contenedorDiv.appendChild (div);  
 
-    menu.onclick = ""; 
+//     menu.onclick = ""; 
 
-    let productos = [
-        {name:"Discos", price: 500, stock: 300},
-        {name:"Chapas", price: 10000, stock: 97},
-        {name:"Caños", price: 13000, stock: 120},
-    ]
+//     let productos = [
+//         {name:"Discos", price: 500, stock: 300},
+//         {name:"Chapas", price: 10000, stock: 97},
+//         {name:"Caños", price: 13000, stock: 120},
+//     ]
 
-    let divProductos = document.getElementsByClassName ("elemento") [0];
-    divProductos.onclick = () => {
-        let contenedorProduc = document.createElement ("ul");
-        divProductos.appendChild (contenedorProduc);
-        for (const producto of productos) {
-            let div = document.createElement ("div");
-            div.innerHTML = `<div class="opciones"><input type="Radio" name="produc-selected" class="optionSelected"> ${producto.name}. Precio: $${producto.price} </div>`;
-            contenedorProduc.appendChild (div);
+//     let divProductos = document.getElementsByClassName ("elemento") [0];
+//     divProductos.onclick = () => {
+//         let contenedorProduc = document.createElement ("ul");
+//         divProductos.appendChild (contenedorProduc);
+//         for (const producto of productos) {
+//             let div = document.createElement ("div");
+//             div.innerHTML = `<div class="opciones"><input type="Radio" name="produc-selected" class="optionSelected"> ${producto.name}. Precio: $${producto.price} </div>`;
+//             contenedorProduc.appendChild (div);
 
-            if (".optionSelected:checked") {
-                divProductos.onclick = "";
-            }
-        }
+//             if (".optionSelected:checked") {
+//                 divProductos.onclick = "";
+//             }
+//         }
        
-        let btn = document.createElement ("button");
-        btn.innerHTML = "Comprar";
-        divProductos.appendChild (btn);  
+//         let btn = document.createElement ("button");
+//         btn.innerHTML = "Comprar";
+//         divProductos.appendChild (btn);  
 
-        $("button").click ((e) => {
-            $ (".elemento")[0].append ("Usted ha agregado un producto al carrito")
-        })
-    }
+//         $("button").click ((e) => {
+//             $ (".elemento")[0].append ("Usted ha agregado un producto al carrito")
+//         })
+//     }
 
-    let maquinas = [
-        {name:"Agujereadora de banco", price: 25000, stock: 50},
-        {name:"Balancin", price: 10000, stock: 68},  
-        {name: "Cortadora de chapas", price: 30000, stock: 25},
-        {name:"Cortadora de fierros", price: 35000, stock: 75},
-        {name: "Plegadora", price: 60000, stock: 32},
-    ]
+//     let maquinas = [
+//         {name:"Agujereadora de banco", price: 25000, stock: 50},
+//         {name:"Balancin", price: 10000, stock: 68},  
+//         {name: "Cortadora de chapas", price: 30000, stock: 25},
+//         {name:"Cortadora de fierros", price: 35000, stock: 75},
+//         {name: "Plegadora", price: 60000, stock: 32},
+//     ]
 
-    let divMaquinas = document.getElementsByClassName ("elemento") [1];
-    divMaquinas.onclick = () => {
-        let contenedorMaquinas = document.createElement ("ul");
-        divMaquinas.appendChild (contenedorMaquinas);
-        for (const maquina of maquinas) {
-            let div = document.createElement ("div");
-            div.innerHTML = `<div class="opciones"><input type="Radio" name="produc-selected" class="optionSelected"> ${maquina.name}. Precio: $${maquina.price} </div>`;
-            contenedorMaquinas.appendChild (div);
+//     let divMaquinas = document.getElementsByClassName ("elemento") [1];
+//     divMaquinas.onclick = () => {
+//         let contenedorMaquinas = document.createElement ("ul");
+//         divMaquinas.appendChild (contenedorMaquinas);
+//         for (const maquina of maquinas) {
+//             let div = document.createElement ("div");
+//             div.innerHTML = `<div class="opciones"><input type="Radio" name="produc-selected" class="optionSelected"> ${maquina.name}. Precio: $${maquina.price} </div>`;
+//             contenedorMaquinas.appendChild (div);
 
-            if (".optionSelected:checked") {
-                divMaquinas.onclick = "";
-            }
-        }
+//             if (".optionSelected:checked") {
+//                 divMaquinas.onclick = "";
+//             }
+//         }
         
-        let btn = document.createElement ("button");
-        btn.innerHTML = "Comprar";
-        divMaquinas.appendChild (btn); 
+//         let btn = document.createElement ("button");
+//         btn.innerHTML = "Comprar";
+//         divMaquinas.appendChild (btn); 
 
-        $("button").click ((e) => {
-            $ (".elemento")[1].append ("Usted ha agregado una máquina al carrito")
-        })
-    }
+//         $("button").click ((e) => {
+//             $ (".elemento")[1].append ("Usted ha agregado una máquina al carrito")
+//         })
+//     }
+// }
+
+//CLASE 13- EFECTOS Y ANIMACIONES CON JQUERY
+let maquinas = [
+            {name:"Agujereadora de banco", price: 25000, stock: 50},
+            {name:"Balancin", price: 10000, stock: 68},  
+            {name: "Cortadora de chapas", price: 30000, stock: 25},
+            {name:"Cortadora de fierros", price: 35000, stock: 75},
+            {name: "Plegadora", price: 60000, stock: 32},
+]
+
+let menu = document.getElementById ("menu");
+
+let btn = document.createElement ("button");
+btn.innerHTML = "Ver";
+menu.appendChild (btn);
+
+for (const maquina of maquinas) {
+    let opciones = document.createElement ("h4");
+    opciones.innerHTML = `<h4 style="display:none" class="maquinasTodas"> ${maquina.name}. Precio: $${maquina.price} </h4>`;
+    menu.appendChild (opciones);
 }
+
+$("button").click ((e) => {
+    $(".maquinasTodas").slideDown ("slow", function () {
+        $ (".maquinasTodas").css ({"font-size":"20px", "color":"grey"})
+    }).delay (4000).slideUp ("fast");
+})
